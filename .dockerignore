@@ -1,0 +1,16 @@
+# Folders
+**/dist
+**/node_modules
+.git
+.gitignore
+.update
+data
+
+# Files
+**/*.log
+.dockerignore
+.travis.yml
+Dockerfile
+docker-compose.yml
+README.md
+LICENSE

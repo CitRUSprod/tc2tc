@@ -1,0 +1,89 @@
+{
+    "name": "tc2tc",
+    "main": "packages/app/dist/index.js",
+    "author": "CitRUS",
+    "license": "MIT",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "dev": "webpack --env.dev",
+        "dev:watch": "yarn dev --watch",
+        "dev:watch:nodemon": "yarn dev:watch --env.nodemon",
+        "build": "webpack",
+        "start": "node .",
+        "docs": "typedoc --options docs.js",
+        "w": "node cli/workspace.js",
+        "create-package": "node cli/create-package.js",
+        "update-project-base": "node cli/update-project-base.js",
+        "sync-project-name": "node cli/sync-project-name.js",
+        "release": "lerna version --no-push",
+        "eslint": "eslint --color",
+        "eslint:fix": "yarn eslint --fix",
+        "eslint:all": "yarn eslint **/*.{js,ts}",
+        "eslint:fix:all": "yarn eslint:all --fix",
+        "prettier": "prettier --check",
+        "prettier:fix": "yarn prettier --write",
+        "prettier:all": "yarn prettier **/*.{json,yml,prettierrc,eslintrc}",
+        "prettier:fix:all": "yarn prettier:all --write",
+        "lint": "yarn prettier:all && yarn eslint:all",
+        "lint:fix": "yarn prettier:fix:all && yarn eslint:fix:all",
+        "test": "lerna run test --stream",
+        "git:commit": "git-cz",
+        "git:push": "git push --follow-tags",
+        "ci": "yarn lint && yarn test",
+        "docker:up": "docker-compose up --build",
+        "docker:down": "docker-compose down --rmi local",
+        "docker:start": "yarn docker:up --exit-code-from app app & yarn docker:down",
+        "docker:ci": "yarn docker:up --exit-code-from ci ci & yarn docker:down"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-customizable"
+        },
+        "cz-customizable": {
+            "config": "commitizen.js"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g commitlint.js",
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts}": "yarn eslint:fix",
+        "*.{json,yml,prettierrc,eslintrc}": "yarn prettier:fix"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "8.3.5",
+        "@types/jest": "25.1.4",
+        "@types/node": "13.9.1",
+        "@typescript-eslint/eslint-plugin": "2.24.0",
+        "@typescript-eslint/parser": "2.24.0",
+        "before-build-webpack": "0.2.9",
+        "clean-webpack-plugin": "3.0.0",
+        "commitizen": "4.0.3",
+        "cz-customizable": "6.2.0",
+        "eslint": "6.8.0",
+        "eslint-plugin-jsdoc": "22.0.1",
+        "fs-extra": "8.1.0",
+        "husky": "4.2.3",
+        "jest": "25.1.0",
+        "lerna": "3.20.2",
+        "lint-staged": "10.0.8",
+        "lodash": "4.17.15",
+        "nodemon-webpack-plugin": "4.3.1",
+        "prettier": "1.19.1",
+        "source-map-support": "0.5.16",
+        "ts-jest": "25.2.1",
+        "ts-loader": "6.2.1",
+        "typedoc": "0.17.0",
+        "typedoc-plugin-lerna-packages": "0.3.0",
+        "typescript": "3.8.3",
+        "webpack": "4.42.0",
+        "webpack-cli": "3.3.11",
+        "webpack-node-externals": "1.7.2"
+    }
+}

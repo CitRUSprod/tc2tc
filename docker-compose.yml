@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+    app:
+        build: .
+        container_name: app
+        entrypoint: yarn start
+        volumes:
+            - ./data:/app/data
+    ci:
+        build: .
+        container_name: ci
+        entrypoint: yarn ci
+        volumes:
+            - ./data:/app/data

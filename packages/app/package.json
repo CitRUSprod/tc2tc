@@ -1,0 +1,8 @@
+{
+    "name": "@tc2tc/app",
+    "version": "0.0.0",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "author": "CitRUS",
+    "license": "MIT"
+}

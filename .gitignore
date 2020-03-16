@@ -1,0 +1,8 @@
+# Folders
+.update
+data
+dist
+node_modules
+
+# Files
+*.log
