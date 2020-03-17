@@ -72,8 +72,9 @@ module.exports = (env = {}) => ({
         rules: [
             {
                 test: /\.ts$/,
-                use: "ts-loader",
-                exclude: /node_modules/
+                loader: "ts-loader",
+                exclude: /node_modules/,
+                options: { configFile: "tsconfig.webpack.json" }
             },
             {
                 test: /\.mjs$/,
