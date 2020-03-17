@@ -1,4 +1,4 @@
-import TwitchChatReceiver from "@tc2tc/twitch-chat-receiver"
+import TwitchChatReceiver from "../src"
 
 
 const mockConnect: jest.Mock = jest.fn()
