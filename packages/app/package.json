@@ -4,5 +4,12 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "author": "CitRUS",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "@types/fs-extra": "8.1.0"
+    },
+    "dependencies": {
+        "fs-extra": "8.1.0",
+        "validate": "5.1.0"
+    }
 }
