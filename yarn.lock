@@ -9101,7 +9101,7 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twitch-chat-client@^4.0.7:
+twitch-chat-client@4.0.7:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/twitch-chat-client/-/twitch-chat-client-4.0.7.tgz#8b7a67c72251bd5dc1c994978b5235a0cc4beffb"
   integrity sha512-ajTtql7MOX5BI4zthb9GwLLq8tInY741Bpab+ns6WQwDFcsCH5xf0tvvlDEZKCDBMY9Xwc+cONoQGQMcXPWI+A==
@@ -9112,7 +9112,7 @@ twitch-chat-client@^4.0.7:
     ircv3 "^0.22.1"
     tslib "^1.9.3"
 
-twitch@^4.0.7:
+twitch@4.0.7:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/twitch/-/twitch-4.0.7.tgz#42161dbf21dd4402b44563acc64ff2d1e82a1011"
   integrity sha512-8obam9whm63MawM17d1+zn1My37DPM6ENYD+fZxJn6HCwqumuaDiZxAU4trx9G2bOo2Sl803nDcjjcrI+cnBWQ==
