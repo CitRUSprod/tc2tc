@@ -416,7 +416,8 @@
 
                 // JSDoc
                 "jsdoc/no-types": 2,
-                "jsdoc/require-param-type": 0
+                "jsdoc/require-param-type": 0,
+                "jsdoc/require-returns-type": 0
             }
         },
         {
