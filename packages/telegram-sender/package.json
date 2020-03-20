@@ -1,0 +1,18 @@
+{
+    "name": "@tc2tc/telegram-sender",
+    "version": "0.0.0",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "author": "CitRUS",
+    "license": "MIT",
+    "scripts": {
+        "test": "jest --colors"
+    },
+    "jest": {
+        "preset": "ts-jest"
+    },
+    "dependencies": {
+        "https-proxy-agent": "5.0.0",
+        "telegraf": "3.36.0"
+    }
+}
