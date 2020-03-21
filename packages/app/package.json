@@ -5,11 +5,22 @@
     "types": "dist/index.d.ts",
     "author": "CitRUS",
     "license": "MIT",
+    "scripts": {
+        "test": "jest --colors"
+    },
+    "jest": {
+        "preset": "ts-jest"
+    },
     "devDependencies": {
-        "@types/fs-extra": "8.1.0"
+        "@types/fs-extra": "8.1.0",
+        "@types/lodash": "4.14.149"
     },
     "dependencies": {
+        "@tc2tc/telegram-sender": "*",
+        "@tc2tc/twitch-chat-receiver": "*",
         "fs-extra": "8.1.0",
+        "lodash": "4.17.15",
+        "moment": "^2.24.0",
         "validate": "5.1.0"
     }
 }

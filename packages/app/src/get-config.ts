@@ -13,6 +13,10 @@ export interface IConfig {
     channelPairs: Array<IChannelPair>
     telegramBotTokens: Array<string>
     httpsProxy?: string
+    format?: {
+        date?: string
+        time?: string
+    }
 }
 
 
@@ -44,7 +48,11 @@ const configSchema: Schema = new Schema({
         length: { min: 1 },
         required: true
     },
-    httpsProxy: { type: String }
+    httpsProxy: { type: String },
+    format: {
+        date: { type: String },
+        time: { type: String }
+    }
 })
 
 
