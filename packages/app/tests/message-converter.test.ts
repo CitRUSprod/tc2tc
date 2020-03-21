@@ -19,7 +19,7 @@ describe("MessageConverter: getForConsole", () => {
 
     test("should return console message", () => {
 
-        expect(converter.getForConsole()).toBe("[01.01.1970] [03:00:00] <pepega>: Hello world")
+        expect(converter.getForConsole()).toBe("[01.01.1970] [00:00:00] <pepega>: Hello world")
 
     })
 
@@ -36,7 +36,7 @@ describe("MessageConverter: getForTelegram", () => {
 
     test("should return telegram message", () => {
 
-        expect(converter.getForTelegram()).toBe("<code>01.01.1970 03:00:00</code>\n<b>&lt;pepega&gt;:</b> Hello world")
+        expect(converter.getForTelegram()).toBe("<code>01.01.1970 00:00:00</code>\n<b>&lt;pepega&gt;:</b> Hello world")
 
     })
 
