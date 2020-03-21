@@ -14,7 +14,7 @@ interface ITelegramConnection {
 
 
 const { version }: { version: string } = fs.readJsonSync(path.join(process.cwd(), "lerna.json"))
-console.log(`Twitch Chat to Telegram Channel (TC2TC) v${version}\n`)
+console.log(`\nTwitch Chat to Telegram Channel (TC2TC) v${version}\n`)
 
 
 getConfig()
@@ -86,7 +86,7 @@ getConfig()
 
             if (channel !== undefined) {
 
-                const converter: MessageConverter = new MessageConverter(msg)
+                const converter: MessageConverter = new MessageConverter(msg, config.format?.date, config.format?.time)
                 console.log(converter.getForConsole())
                 sender.send(channel, converter.getForTelegram())
 
