@@ -72,9 +72,9 @@ export default class MessageConverter {
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
 
-        const textWithHighlightedNames: string = textForHtml.replace(/@\w*/gi, (match: string) => {
+        const textWithHighlightedNames: string = textForHtml.replace(/\B@\S+/gi, (match: string) => {
 
-            const isName: boolean = !(/^https?$/i).test(match)
+            const isName: boolean = !(/^@https?:/i).test(match)
 
             if (isName) {
 
@@ -82,7 +82,7 @@ export default class MessageConverter {
 
             }
 
-            return match
+            return `<a href="${match.slice(1)}">${match}</a>`
 
         })
 
