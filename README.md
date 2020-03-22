@@ -3,15 +3,13 @@
 > Twitch Chat logger in Telegram Channel
 
 
-[![Build Status](https://travis-ci.org/CitRUSprod/tc2tc.svg)](https://travis-ci.org/CitRUSprod/tc2tc) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![Build Status](https://travis-ci.org/CitRUSprod/tc2tc.svg?branch=master)](https://travis-ci.org/CitRUSprod/tc2tc) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
-## Installation:
+## Installation with Docker
 
-To get started locally, follow these instructions:
+1. Install <a href="https://docs.docker.com/" target="_blank">docker and docker-compose</a>
 
-1. Install [docker and docker-compose](https://docs.docker.com/)
-
-2. Clone to your local computer:
+2. Clone the repository to your local computer:
 
 ```bash
 $ git clone https://github.com/CitRUSprod/tc2tc
@@ -29,9 +27,11 @@ $ cd tc2tc
 $ docker-compose build app
 ```
 
+5. Create [a configuration file](#configuration)
+
 ---
 
-## Usage
+## Usage with Docker
 
 Start app:
 
@@ -47,9 +47,45 @@ $ docker-compose down
 
 ---
 
+## Installation without Docker
+
+1. Install <a href="https://nodejs.org/" target="_blank">node.js</a> and <a href="https://classic.yarnpkg.com/" target="_blank">yarn</a>
+
+2. Clone the repository to your local computer:
+
+```bash
+$ git clone https://github.com/CitRUSprod/tc2tc
+```
+
+3. Open app folder:
+
+```bash
+$ cd tc2tc
+```
+
+4. Build the app:
+
+```bash
+$ yarn && yarn build
+```
+
+5. Create [a configuration file](#configuration)
+
+---
+
+## Usage without Docker
+
+Start app:
+
+```bash
+$ yarn start
+```
+
+---
+
 ## Configuration
 
-```json
+```js
 // data/config.json
 {
     "channelPairs": [
