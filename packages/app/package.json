@@ -1,6 +1,6 @@
 {
     "name": "@tc2tc/app",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "author": "CitRUS",
@@ -16,11 +16,11 @@
         "@types/lodash": "4.14.149"
     },
     "dependencies": {
-        "@tc2tc/telegram-sender": "^0.1.0",
-        "@tc2tc/twitch-chat-receiver": "^0.1.0",
+        "@tc2tc/telegram-sender": "^0.1.1",
+        "@tc2tc/twitch-chat-receiver": "0.1.0",
         "fs-extra": "8.1.0",
         "lodash": "4.17.15",
-        "moment": "^2.24.0",
+        "moment": "2.24.0",
         "validate": "5.1.0"
     }
 }

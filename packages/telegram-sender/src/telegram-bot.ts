@@ -107,9 +107,17 @@ export default class TelegramBot {
 
         }
 
-        await this.bot.telegram.sendMessage(`@${channel}`, message, { parse_mode: "HTML" })
+        try {
 
-        this.delays[channel] = delay(3000)
+            await this.bot.telegram.sendMessage(`@${channel}`, message, { parse_mode: "HTML" })
+            this.delays[channel] = delay(3000)
+
+        } catch {
+
+            await delay(3000)
+            await this.send(channel, message)
+
+        }
 
     }
 
