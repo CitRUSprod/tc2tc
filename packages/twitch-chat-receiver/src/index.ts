@@ -1,5 +1,4 @@
-import ChatClient from "twitch-chat-client"
-
+import { ChatClient, PrivmsgMessage } from "dank-twitch-irc"
 
 export interface IMessage {
     time: number
@@ -7,7 +6,6 @@ export interface IMessage {
     username: string
     text: string
 }
-
 
 /**
  * Twitch chat receiver.
@@ -28,13 +26,17 @@ export default class TwitchChatReceiver {
      */
     public constructor(...channels: Array<string>) {
 
-        this.client = new ChatClient(undefined)
+        this.client = new ChatClient()
 
-        for (const channel of channels) {
+        this.client.on("ready", () => {
 
-            this.client.onRegister(() => this.client.join(channel))
+            for (const channel of channels) {
 
-        }
+                this.client.join(channel)
+
+            }
+
+        })
 
     }
 
@@ -71,13 +73,13 @@ export default class TwitchChatReceiver {
      */
     public onMessage(listener: (message: IMessage) => void): void {
 
-        this.client.onPrivmsg((channel: string, username: string, text: string) => {
+        this.client.on("PRIVMSG", (msg: PrivmsgMessage) => {
 
             const message: IMessage = {
                 time: Date.now(),
-                channel: channel.slice(1),
-                username,
-                text
+                channel: msg.channelName,
+                username: msg.displayName,
+                text: msg.messageText
             }
             listener(message)
 
