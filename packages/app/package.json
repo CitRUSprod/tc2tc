@@ -19,7 +19,7 @@
         "@tc2tc/telegram-sender": "^0.1.1",
         "@tc2tc/twitch-chat-receiver": "0.1.0",
         "fs-extra": "8.1.0",
-        "lodash": "4.17.15",
+        "lodash": "4.17.21",
         "moment": "2.24.0",
         "validate": "5.1.0"
     }
